@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2552599519619050115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4222204039562744663}
+  - component: {fileID: 7911778695097502214}
+  m_Layer: 0
+  m_Name: Sword Attack Range Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4222204039562744663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552599519619050115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -37.1, y: 3.5, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &7911778695097502214
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552599519619050115}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.99425507, y: 0.8064594}
+      - {x: 0.20999527, y: 1.0086741}
+      - {x: -0.1901741, y: 1.0544562}
+      - {x: -0.79084396, y: 1.0383534}
+      - {x: -0.8476715, y: 0.9685502}
+      - {x: -0.45658493, y: 0.71426344}
+      - {x: 0.12169647, y: 0.61665773}
+      - {x: 0.79353714, y: 0.2977743}
+      - {x: 0.89933395, y: 0.085651875}
+      - {x: 0.91080093, y: -0.23141909}
+      - {x: 0.72226334, y: -0.5703213}
+      - {x: 0.04076475, y: -0.84100986}
+      - {x: -0.30737686, y: -0.9292028}
+      - {x: -0.7628975, y: -0.9456837}
+      - {x: -1.4610939, y: -0.92109156}
+      - {x: -1.4339981, y: -0.9562144}
+      - {x: -1.3013992, y: -0.9494901}
+      - {x: -1.2748642, y: -1.0163476}
+      - {x: -1.1068573, y: -1.0054576}
+      - {x: -1.0871544, y: -1.0518019}
+      - {x: -0.8044586, y: -1.054738}
+      - {x: -0.7808609, y: -1.109422}
+      - {x: -0.5284691, y: -1.1010842}
+      - {x: 0.1339302, y: -1.0731585}
+      - {x: 0.43292618, y: -1.0022223}
+      - {x: 0.62308747, y: -0.95505226}
+      - {x: 0.75207293, y: -0.94288254}
+      - {x: 1.3773117, y: -0.6085286}
+      - {x: 1.6239777, y: -0.30442595}
+      - {x: 1.6974869, y: 0.027068853}
+      - {x: 1.6850815, y: 0.13478494}
+      - {x: 1.5108595, y: 0.44288272}
