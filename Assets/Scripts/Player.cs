@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     {   
         PlayerMove();
         PlayerAttack();
+        Idle();
     }
 
 
@@ -37,10 +38,10 @@ public class Player : MonoBehaviour
         
     private void PlayerAttack()
     {
-        if (Input.GetButtonDown("Attack1"))
+        if (Input.GetButtonDown("Attack1") && !animator.GetBool("Attack"))
         {
             StartCoroutine(AttackCoroutine());
-            if (movement.x < 0)
+            if (movement.x < 0 || animator.GetFloat("Idle") == -1)
             {
                 GameObject attack = Instantiate(attackLeft, transform.position, Quaternion.identity);
                 Destroy(attack, animationSpeed);
@@ -68,5 +69,16 @@ public class Player : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+    }
+
+    private void Idle()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            animator.SetFloat("Idle", -1);
+        } else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
+        {
+            animator.SetFloat("Idle", 1);
+        }
     }
 }

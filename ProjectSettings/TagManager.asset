@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Attack
+  - Side_Gate
+  - Up_Gate
+  - Down_Gate
   layers:
   - Default
   - TransparentFX

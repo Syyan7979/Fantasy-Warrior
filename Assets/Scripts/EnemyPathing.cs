@@ -6,11 +6,11 @@ using UnityEngine;
 public class EnemyPathing : MonoBehaviour
 {
     // Config Params
-    [SerializeField] List<Transform> waypoints;
     [SerializeField] float movementSpeed = 4.5f;
     //[SerializeField] float enemyPauseTime = 1.2f;
 
     // Dynamic Variables
+    List<Transform> waypoints;
     int waypointIndex = 0;
     Animator animator;
     Vector3 oldPos;
@@ -18,7 +18,6 @@ public class EnemyPathing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Shuffle(waypoints);
         animator = GetComponent<Animator>();
         transform.position = waypoints[waypointIndex].transform.position;
     }
@@ -65,6 +64,11 @@ public class EnemyPathing : MonoBehaviour
             waypointIndex = 0;
             Shuffle(waypoints);
         }
+    }
+
+    public void SetWaypoints(List<Transform> path)
+    {
+        waypoints = path;
     }
 
     public static List<T> Shuffle<T>(List<T> list)
