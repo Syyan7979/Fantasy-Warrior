@@ -13,11 +13,12 @@ public class RoomLock : MonoBehaviour
     [SerializeField] GameObject closedGateUp;
     [SerializeField] GameObject closedGateDown;
     [SerializeField] GatesConfig gatesConfig;
-    [SerializeField] int spawnWaveCount;
 
     // Dynamic Variables
     List<GameObject> gates;
-    
+    int spawnWaveCount;
+    bool locked = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +30,15 @@ public class RoomLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        WaveCountChecker();
+    }
+
+    private void WaveCountChecker()
+    {
         if (spawnWaveCount == 0)
         {
             GateOpen();
+            locked = false;
         }
     }
 
@@ -93,14 +100,20 @@ public class RoomLock : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && !locked)
         {
             GateClose();
+            locked = true;
         }
     }
 
     public void NewWaveSpawn()
     {
         spawnWaveCount--;
+    }
+
+    public bool ReturnLockedState()
+    {
+        return locked;
     }
 }

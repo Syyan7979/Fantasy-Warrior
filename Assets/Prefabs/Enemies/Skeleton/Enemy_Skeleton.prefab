@@ -176,4 +176,5 @@ MonoBehaviour:
     type: 3}
   enemyAttackLeft: {fileID: 463759200232580201, guid: 10d2d378ba0de4eeca97e667aeaf3a62,
     type: 3}
-  animationAttackTime: 0.35
+  animationAttackTime: 0.533
+  attackInterval: 3

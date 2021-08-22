@@ -12,15 +12,18 @@ public class Enemy : MonoBehaviour
     [SerializeField] float movementSpeed = 2f;
     [SerializeField] GameObject enemyAttackRight, enemyAttackLeft;
     [SerializeField] float animationAttackTime = 0.35f;
+    [SerializeField] float attackInterval = 5f;
 
     // Dynamic Variables
     Animator animator;
     EnemySpawner enemySpawner;
     EnemyPathing enemyPathing;
     Player player;
+    RoomLock roomLock;
     Vector3 oldPos;
     bool dead = false;
     float diff;
+    bool attackStopped = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +32,7 @@ public class Enemy : MonoBehaviour
         enemySpawner = FindObjectOfType<EnemySpawner>();
         enemyPathing = GetComponent<EnemyPathing>();
         player = FindObjectOfType<Player>();
+        roomLock = FindObjectOfType<RoomLock>();
     }
 
     // Update is called once per frame
@@ -43,18 +47,10 @@ public class Enemy : MonoBehaviour
     private void EnemyAttacksConfig()
     {
         float distanceBetween = Vector2.Distance(player.transform.position, transform.position);
-        if (distanceBetween < 2)
+        if (distanceBetween < 2 && !attackStopped)
         {
-            if (diff < 0)
-            {
-                GameObject attack = Instantiate(enemyAttackLeft, transform.position, Quaternion.identity);
-                Destroy(attack, animationAttackTime);
-            }
-            else if (diff > 0)
-            {
-                GameObject attack = Instantiate(enemyAttackRight, transform.position, Quaternion.identity);
-                Destroy(attack, animationAttackTime);
-            }
+            StartCoroutine(AnimateAttack());
+            StartCoroutine(EnemyAttackHandler());
         }
         
     }
@@ -83,14 +79,32 @@ public class Enemy : MonoBehaviour
 
     void FollowPlayer()
     {
+        System.Random rnd = new System.Random();
         float distanceBetween = Vector2.Distance(player.transform.position, transform.position);
-        if (distanceBetween < 7)
+        Vector3 offset = new Vector2();
+        bool forIdle = false;
+        float distanceBetweenX;
+        if (distanceBetween < 7 && roomLock.ReturnLockedState())
         {
+            if (!forIdle)
+            {
+                distanceBetweenX = transform.position.x - player.transform.position.x;
+                if (distanceBetweenX < 0)
+                {
+                    animator.SetFloat("Idle", -1);
+                    offset = new Vector2(-1, 0);
+                } else if (distanceBetweenX > 0)
+                {
+                    animator.SetFloat("Idle", 1);
+                    offset = new Vector2(1, 0);
+                }
+                forIdle = true;
+            }
             enemyPathing.enabled = false;
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, movementSpeed * Time.deltaTime);
-            
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position + offset, movementSpeed * Time.deltaTime);
         } else
         {
+            forIdle = false;
             enemyPathing.enabled = true;
         }
     }
@@ -127,5 +141,29 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(deathAnimationTime);
         enemySpawner.SpawnKilled();
         Destroy(gameObject);
+    }
+
+    IEnumerator EnemyAttackHandler()
+    {
+        attackStopped = true;
+        if (diff < 0 || (animator.GetFloat("Horizontal") == 0 && animator.GetFloat("Idle") == 1))
+        {
+            GameObject attack = Instantiate(enemyAttackLeft, transform.position, Quaternion.identity);
+            Destroy(attack, animationAttackTime);
+        }
+        else if (diff > 0 || (animator.GetFloat("Horizontal") == 0 && animator.GetFloat("Idle") == -1))
+        {
+            GameObject attack = Instantiate(enemyAttackRight, transform.position, Quaternion.identity);
+            Destroy(attack, animationAttackTime);
+        }
+        yield return new WaitForSeconds(attackInterval);
+        attackStopped = false;
+    }
+
+    IEnumerator AnimateAttack()
+    {
+        animator.SetBool("Attack", true);
+        yield return new WaitForSeconds(animationAttackTime);
+        animator.SetBool("Attack", false);
     }
 }

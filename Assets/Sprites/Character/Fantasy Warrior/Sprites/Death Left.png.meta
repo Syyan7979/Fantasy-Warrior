@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: e7a8da5e34e844dcfafd6a3e22889536
+guid: 3fe57ff9bdd594066bd2007c28b90c3b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5243867695120633725
-    second: Idle Left_33
+      213: -2888325712454237978
+    second: Death Left_66
   - first:
-      213: 4502503213197837901
-    second: Idle Left_32
+      213: -5403383834122645268
+    second: Death Left_65
   - first:
-      213: -20192062938688837
-    second: Idle Left_31
+      213: -9102224860708485209
+    second: Death Left_64
   - first:
-      213: -728992563985003855
-    second: Idle Left_30
+      213: -575986446753308324
+    second: Death Left_63
+  - first:
+      213: 1349695803443407076
+    second: Death Left_62
+  - first:
+      213: -4162396454628549640
+    second: Death Left_61
+  - first:
+      213: -243629174528592512
+    second: Death Left_60
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -57,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,85 +108,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle Left_33
+      name: Death Left_66
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 150
-        height: 150
+        width: 162
+        height: 162
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 380303f4d1a0a37b0800000000000000
-      internalID: -5243867695120633725
+      spriteID: 6e0c989411b9ae7d0800000000000000
+      internalID: -2888325712454237978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Left_32
+      name: Death Left_65
       rect:
         serializedVersion: 2
-        x: 150
+        x: 162
         y: 0
-        width: 150
-        height: 150
+        width: 162
+        height: 162
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4646be21da1c7e30800000000000000
-      internalID: 4502503213197837901
+      spriteID: ce0180ef7035305b0800000000000000
+      internalID: -5403383834122645268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Left_31
+      name: Death Left_64
       rect:
         serializedVersion: 2
-        x: 300
+        x: 324
         y: 0
-        width: 150
-        height: 150
+        width: 162
+        height: 162
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb2d14dfc6348bff0800000000000000
-      internalID: -20192062938688837
+      spriteID: 7a7cdbff6b66ea180800000000000000
+      internalID: -9102224860708485209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Left_30
+      name: Death Left_63
       rect:
         serializedVersion: 2
-        x: 450
+        x: 486
         y: 0
-        width: 150
-        height: 150
+        width: 162
+        height: 162
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bac5cb102912e5f0800000000000000
-      internalID: -728992563985003855
+      spriteID: c5164ddd06fa108f0800000000000000
+      internalID: -575986446753308324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Left_62
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e86417ae251bb210800000000000000
+      internalID: 1349695803443407076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Left_61
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 0
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb15835a723c36c0800000000000000
+      internalID: -4162396454628549640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Left_60
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 0
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0853d4b7e847e9cf0800000000000000
+      internalID: -243629174528592512
       vertices: []
       indices: 
       edges: []

@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1933883364218106656}
   - component: {fileID: 5562844575537937051}
+  - component: {fileID: 5234137747665305648}
   m_Layer: 0
   m_Name: Goblin_Attack1_Right
-  m_TagString: Untagged
+  m_TagString: Enemy_Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,3 +71,16 @@ PolygonCollider2D:
       - {x: 1.7299906, y: 0.74373305}
       - {x: 1.439, y: 0.7983731}
       - {x: 0.9510565, y: 0.30901712}
+--- !u!114 &5234137747665305648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7249399714356439118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15cd9e1c7d1fe463bae878ee4da77f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5

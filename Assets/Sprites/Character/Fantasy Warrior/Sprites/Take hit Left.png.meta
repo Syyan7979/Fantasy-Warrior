@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: e7a8da5e34e844dcfafd6a3e22889536
+guid: 80d0fedd085774c8a8e20ec49450849f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5243867695120633725
-    second: Idle Left_33
+      213: -182353452000233227
+    second: Take hit Left_22
   - first:
-      213: 4502503213197837901
-    second: Idle Left_32
+      213: -1817631695324395502
+    second: Take hit Left_21
   - first:
-      213: -20192062938688837
-    second: Idle Left_31
-  - first:
-      213: -728992563985003855
-    second: Idle Left_30
+      213: 6724270073320949152
+    second: Take hit Left_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -57,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,13 +96,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle Left_33
+      name: Take hit Left_22
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 150
-        height: 150
+        width: 162
+        height: 162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -113,20 +110,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 380303f4d1a0a37b0800000000000000
-      internalID: -5243867695120633725
+      spriteID: 5f8b5f56086287df0800000000000000
+      internalID: -182353452000233227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Left_32
+      name: Take hit Left_21
       rect:
         serializedVersion: 2
-        x: 150
+        x: 162
         y: 0
-        width: 150
-        height: 150
+        width: 162
+        height: 162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4646be21da1c7e30800000000000000
-      internalID: 4502503213197837901
+      spriteID: 218c2b37a9976c6e0800000000000000
+      internalID: -1817631695324395502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Left_31
+      name: Take hit Left_20
       rect:
         serializedVersion: 2
-        x: 300
+        x: 324
         y: 0
-        width: 150
-        height: 150
+        width: 162
+        height: 162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,29 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb2d14dfc6348bff0800000000000000
-      internalID: -20192062938688837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle Left_30
-      rect:
-        serializedVersion: 2
-        x: 450
-        y: 0
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bac5cb102912e5f0800000000000000
-      internalID: -728992563985003855
+      spriteID: 0a5c5164108615d50800000000000000
+      internalID: 6724270073320949152
       vertices: []
       indices: 
       edges: []

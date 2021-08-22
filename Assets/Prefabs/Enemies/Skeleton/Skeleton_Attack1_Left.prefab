@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7028019709753186445}
   - component: {fileID: 6343642915937898267}
+  - component: {fileID: -7542373684190175512}
   m_Layer: 0
   m_Name: Skeleton_Attack1_Left
-  m_TagString: Untagged
+  m_TagString: Enemy_Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,3 +48,16 @@ CapsuleCollider2D:
   m_Offset: {x: 1.6224201, y: 0.23784168}
   m_Size: {x: 2.8857648, y: 1.8154826}
   m_Direction: 1
+--- !u!114 &-7542373684190175512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463759200232580201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15cd9e1c7d1fe463bae878ee4da77f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15

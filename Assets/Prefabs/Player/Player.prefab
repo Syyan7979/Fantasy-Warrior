@@ -195,9 +195,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba3d6e2edd554c77b821e3f9d20834e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7.5
+  movementSpeed: 6.5
   animationSpeed: 0.35
+  hitAnimationTime: 0.188
+  shieldRegenTime: 3.5
+  playerHealth: 100
+  playerShield: 100
   attackRight: {fileID: 2552599519619050115, guid: 67332c480d53243a1810f0b818ad8591,
     type: 3}
   attackLeft: {fileID: 2552599519619050115, guid: 3433418eec6bb4fe0830559e8a4be836,
     type: 3}
+  healthBar: {fileID: 0}
+  shieldBar: {fileID: 0}

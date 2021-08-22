@@ -8,6 +8,7 @@ TagManager:
   - Side_Gate
   - Up_Gate
   - Down_Gate
+  - Enemy_Attack
   layers:
   - Default
   - TransparentFX
