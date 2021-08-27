@@ -11,6 +11,7 @@ public class SpawnConfig : ScriptableObject
     [SerializeField] List<GameObject> enemyPathings;
     [SerializeField] int spawnNumber;
     [SerializeField] int spawningCount;
+    [SerializeField] GameObject roomLock;
 
     // Dyanamic Variables
     
@@ -54,5 +55,11 @@ public class SpawnConfig : ScriptableObject
             list[i] = value;
         }
         return list;
+    }
+
+    public GameObject ReturnRoomLockGO()
+    {
+        GameObject instanceRoomLockGO = Instantiate(roomLock, roomLock.transform.position, Quaternion.identity);
+        return instanceRoomLockGO;
     }
 }

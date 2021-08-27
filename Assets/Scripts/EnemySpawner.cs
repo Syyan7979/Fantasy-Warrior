@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     // Dynamic Variables
     int spawnNumber;
     int spawnCounter;
+    GameObject roomLockGO;
     RoomLock roomLock;
     System.Random rnd;
 
@@ -18,7 +19,9 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnNumber = room.GetSpawnNumber();
         spawnCounter = room.GetSpawningCount();
-        roomLock = FindObjectOfType<RoomLock>();
+        roomLockGO = room.ReturnRoomLockGO();
+        roomLock = roomLockGO.GetComponent<RoomLock>();
+        roomLock.SetSpawnCounts(spawnCounter);
         rnd = new System.Random();
         Spawner(rnd);
     }
@@ -36,6 +39,8 @@ public class EnemySpawner : MonoBehaviour
             var path = room.GetRandomPath(rnd);
             GameObject enemy = Instantiate(room.GetEnemyPrefab(rnd), path[0].transform.position, Quaternion.identity);
             enemy.GetComponent<EnemyPathing>().SetWaypoints(path);
+            enemy.GetComponent<Enemy>().SetRoomLock(roomLock);
+            enemy.GetComponent<Enemy>().SetEnemySpawnerHandler(gameObject.GetComponent<EnemySpawner>());
         }
     }
 
@@ -57,11 +62,6 @@ public class EnemySpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         Spawner(rnd);
-    }
-
-    public int GetSpawnWaveCount()
-    {
-        return room.GetSpawningCount();
     }
 
     public void SpawnKilled()

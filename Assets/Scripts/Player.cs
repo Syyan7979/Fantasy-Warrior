@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] float playerHealth = 100;
     [SerializeField] float playerShield = 80;
     [SerializeField] float deathAnimationTime = 1f;
+    [SerializeField] int shieldRegenAmount = 20;
     [SerializeField] GameObject attackRight, attackLeft, healthBar, shieldBar;
 
     // Initial Config
@@ -44,6 +45,11 @@ public class Player : MonoBehaviour
         PlayerDeath();
     }
 
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + (movement * movementSpeed * Time.fixedDeltaTime));
+    }
+
     private void PlayerDeath()
     {
         if (playerHealth == 0 & !dead)
@@ -58,13 +64,8 @@ public class Player : MonoBehaviour
         if (shieldRegen)
         {
             StartCoroutine(ShieldRegen());
-            playerShield = Mathf.Clamp(playerShield + 10, 0, 100);
+            playerShield = Mathf.Clamp(playerShield + shieldRegenAmount, 0, 100);
         }
-    }
-
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
     }
         
     private void PlayerAttack()

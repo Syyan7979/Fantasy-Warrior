@@ -201,6 +201,8 @@ MonoBehaviour:
   shieldRegenTime: 3.5
   playerHealth: 100
   playerShield: 100
+  deathAnimationTime: 1
+  shieldRegenAmount: 10
   attackRight: {fileID: 2552599519619050115, guid: 67332c480d53243a1810f0b818ad8591,
     type: 3}
   attackLeft: {fileID: 2552599519619050115, guid: 3433418eec6bb4fe0830559e8a4be836,

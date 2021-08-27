@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc3b16da2c6740248d82067e7522576, type: 3}
+  m_Name: Room 1
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 6441195983676008234, guid: a122872a61bce4fcb9d585c9e06f002a, type: 3}
+  - {fileID: 7055267242837434074, guid: 76200786305604710a0ef20981fb6a1e, type: 3}
+  enemyPathings:
+  - {fileID: 7800112070462164517, guid: cc4ab3706a0704e67b1924bd0caf81d3, type: 3}
+  - {fileID: 1073314845184134771, guid: 45032e1948b934478a1aee35f8bb6eb8, type: 3}
+  - {fileID: 4234523836724928578, guid: 4392a68bf8686487796ecf61d7ace432, type: 3}
+  spawnNumber: 10
+  spawningCount: 2
+  roomLock: {fileID: 3505318398360867054, guid: 350ebbf80beb640209485c175e05c11a,
+    type: 3}

@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3505318398360867054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3505318398360867052}
+  - component: {fileID: 3505318398360867055}
+  - component: {fileID: 3505318398360867053}
+  m_Layer: 0
+  m_Name: Room_gate_Trigger 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3505318398360867052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505318398360867054}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.42, y: 3.3, z: -4.0424438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &3505318398360867055
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505318398360867054}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 6}
+  m_EdgeRadius: 0
+--- !u!114 &3505318398360867053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505318398360867054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dffbe38594f349df8f9d5b60886d246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closedGateSideSprite: {fileID: -8087713687794733281, guid: 125e424ffec434edf878118ba07b7964,
+    type: 3}
+  closedGateSideBigSprite: {fileID: -2114690606593644125, guid: 687b9735d3aff4e5dafb9e4a62d5325d,
+    type: 3}
+  closedGateFrontSprite: {fileID: 7599747527137496037, guid: daa56a1e73c3c45229a49d6256b1c71b,
+    type: 3}
+  openGateSideSprite: {fileID: -4370476410822411436, guid: 125e424ffec434edf878118ba07b7964,
+    type: 3}
+  openGateSideBigSprite: {fileID: 4327467087987431735, guid: 687b9735d3aff4e5dafb9e4a62d5325d,
+    type: 3}
+  openGateFrontSprite: {fileID: 201670081035939994, guid: daa56a1e73c3c45229a49d6256b1c71b,
+    type: 3}
+  closedGateSide: {fileID: 4481202567017454725, guid: 3d737e1c54cb148bd968f37090704abd,
+    type: 3}
+  closedGateSideBig: {fileID: 236317346194629987, guid: 63b7e0e5d10b44f54b7a6b994c3f1932,
+    type: 3}
+  closedGateUp: {fileID: 7206065157491926982, guid: e5aae71058ad141fdb52269f9a03e076,
+    type: 3}
+  closedGateDown: {fileID: 8301804649911680364, guid: 9d8c35ff79f0c42898dd10aeb1086c41,
+    type: 3}
+  gatesConfig: {fileID: 11400000, guid: 8cfe5e2f0c63842918a6873c3b32872d, type: 2}
+  spawnWaveCount: 0

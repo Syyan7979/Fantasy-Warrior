@@ -6,24 +6,26 @@ public class RoomLock : MonoBehaviour
 {
     // Config Params
     [SerializeField] Sprite closedGateSideSprite;
+    [SerializeField] Sprite closedGateSideBigSprite;
     [SerializeField] Sprite closedGateFrontSprite;
     [SerializeField] Sprite openGateSideSprite;
+    [SerializeField] Sprite openGateSideBigSprite;
     [SerializeField] Sprite openGateFrontSprite;
     [SerializeField] GameObject closedGateSide;
+    [SerializeField] GameObject closedGateSideBig;
     [SerializeField] GameObject closedGateUp;
     [SerializeField] GameObject closedGateDown;
     [SerializeField] GatesConfig gatesConfig;
 
     // Dynamic Variables
     List<GameObject> gates;
-    int spawnWaveCount;
+    [SerializeField] int spawnWaveCount;
     bool locked = false;
 
     // Start is called before the first frame update
     void Start()
     {
         gates = new List<GameObject>();
-        spawnWaveCount = FindObjectOfType<EnemySpawner>().GetSpawnWaveCount();
         GatesInitializaiton();
     }
 
@@ -46,22 +48,31 @@ public class RoomLock : MonoBehaviour
     {
         var tags = gatesConfig.GetGateTags();
         var gatePositions = gatesConfig.GetGatePositions();
-        GameObject gate = new GameObject();
         for(int i  = 0; i < gatePositions.Count; i++)
         {
             if (tags[i] == "Side_Gate")
             {
-                gate = Instantiate(closedGateSide, gatePositions[i].transform.position, Quaternion.identity);
+                GameObject gate = Instantiate(closedGateSide, gatePositions[i].transform.position, Quaternion.identity);
                 gate.tag = "Side_Gate";
+                gate.GetComponent<Collider2D>().enabled = false;
+                gates.Add(gate);
             } else if (tags[i] == "Up_Gate")
             {
-                gate = Instantiate(closedGateUp, gatePositions[i].transform.position, Quaternion.identity);
+                GameObject gate = Instantiate(closedGateUp, gatePositions[i].transform.position, Quaternion.identity);
+                gate.GetComponent<Collider2D>().enabled = false;
+                gates.Add(gate);
             } else if (tags[i] == "Down_Gate")
             {
-                gate = Instantiate(closedGateDown, gatePositions[i].transform.position, Quaternion.identity);
+                GameObject gate = Instantiate(closedGateDown, gatePositions[i].transform.position, Quaternion.identity);
+                gate.GetComponent<Collider2D>().enabled = false;
+                gates.Add(gate);
+            } else if (tags[i] == "SideBig_Gate")
+            {
+                GameObject gate = Instantiate(closedGateSideBig, gatePositions[i].transform.position, Quaternion.identity);
+                gate.tag = "SideBig_Gate";
+                gate.GetComponent<Collider2D>().enabled = false;
+                gates.Add(gate);
             }
-            gate.GetComponent<Collider2D>().enabled = false;
-            gates.Add(gate);
         }
     }
 
@@ -73,7 +84,11 @@ public class RoomLock : MonoBehaviour
             if (gate.tag == "Side_Gate") 
             {
                 gate.GetComponent<SpriteRenderer>().sprite = closedGateSideSprite;
-            } else
+            } else if (gate.tag == "SideBig_Gate")
+            {
+                gate.GetComponent<SpriteRenderer>().sprite = closedGateSideBigSprite;
+            }
+            else
             {
                 gate.GetComponent<SpriteRenderer>().sprite = closedGateFrontSprite;
             }
@@ -89,8 +104,10 @@ public class RoomLock : MonoBehaviour
             if (gate.tag == "Side_Gate")
             {
                 gate.GetComponent<SpriteRenderer>().sprite = openGateSideSprite;
-            }
-            else
+            } else if (gate.tag == "SideBig_Gate")
+            {
+                gate.GetComponent<SpriteRenderer>().sprite = openGateSideBigSprite;
+            } else
             {
                 gate.GetComponent<SpriteRenderer>().sprite = openGateFrontSprite;
             }
@@ -115,5 +132,10 @@ public class RoomLock : MonoBehaviour
     public bool ReturnLockedState()
     {
         return locked;
+    }
+
+    public void SetSpawnCounts(int spawnCount)
+    {
+        spawnWaveCount = spawnCount;
     }
 }

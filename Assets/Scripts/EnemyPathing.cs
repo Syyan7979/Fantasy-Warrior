@@ -7,13 +7,15 @@ public class EnemyPathing : MonoBehaviour
 {
     // Config Params
     [SerializeField] float movementSpeed = 4.5f;
-    //[SerializeField] float enemyPauseTime = 1.2f;
+    [SerializeField] float enemyPauseTime = 1.2f;
 
     // Dynamic Variables
     List<Transform> waypoints;
     int waypointIndex = 0;
     Animator animator;
     Vector3 oldPos;
+    bool enemyPause = false;
+    bool start = true;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +51,6 @@ public class EnemyPathing : MonoBehaviour
 
     private void EnemyMovement()
     {
-        
         if (waypointIndex < waypoints.Count)
         {
             var targetPosition = waypoints[waypointIndex].transform.position;
@@ -57,13 +58,33 @@ public class EnemyPathing : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementFPSInd);
             if (transform.position == targetPosition)
             {
-                waypointIndex ++;
+                if (!enemyPause)
+                {
+                    if (!start)
+                    {
+                        StartCoroutine(PauseEnemyMovement());
+                    } else
+                    {
+                        animator.SetFloat("Idle", 1);
+                    }
+                } 
+            } else
+            {
+                if (targetPosition.x - transform.position.x < 0)
+                {
+                    animator.SetFloat("Idle", 1);
+                }
+                else if (targetPosition.x - transform.position.x > 0)
+                {
+                    animator.SetFloat("Idle", -1);
+                }
             }
         } else
         {
             waypointIndex = 0;
             Shuffle(waypoints);
         }
+        start = false;
     }
 
     public void SetWaypoints(List<Transform> path)
@@ -82,5 +103,13 @@ public class EnemyPathing : MonoBehaviour
             list[i] = value;
         }
         return list;
+    }
+
+    IEnumerator PauseEnemyMovement()
+    {
+        enemyPause = true;
+        yield return new WaitForSeconds(enemyPauseTime);
+        waypointIndex++;
+        enemyPause = false;
     }
 }

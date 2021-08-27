@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
+  enemyPauseTime: 0.5
 --- !u!114 &6912510361109384788
 MonoBehaviour:
   m_ObjectHideFlags: 0

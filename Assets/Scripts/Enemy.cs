@@ -29,10 +29,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        enemySpawner = FindObjectOfType<EnemySpawner>();
         enemyPathing = GetComponent<EnemyPathing>();
         player = FindObjectOfType<Player>();
-        roomLock = FindObjectOfType<RoomLock>();
     }
 
     // Update is called once per frame
@@ -165,5 +163,15 @@ public class Enemy : MonoBehaviour
         animator.SetBool("Attack", true);
         yield return new WaitForSeconds(animationAttackTime);
         animator.SetBool("Attack", false);
+    }
+
+    public void SetRoomLock(RoomLock setRoomLock)
+    {
+        roomLock = setRoomLock;
+    }
+
+    public void SetEnemySpawnerHandler(EnemySpawner getEnemySpawner)
+    {
+        enemySpawner = getEnemySpawner;
     }
 }
